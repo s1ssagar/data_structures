@@ -18,13 +18,14 @@ class LinkedList:
             self.last = temp_node
             self.length += 1
         else:
+            # print(value, temp_node.__dict__, self.last.__dict__)
             self.last.next = temp_node
             self.last = temp_node
             self.length += 1
     
     def insert(self, position, value):
         if position >= self.length:
-            print("poostion greater than length appending to end")
+            print("postion greater than length appending to end")
             self.append(value)
         else:
             temp_node = Node(value)
@@ -47,7 +48,7 @@ class LinkedList:
         if self.length == 0:
             print("no element to pop")
         else:
-            if args and args[0] < self.length:
+            if args and args[0] < self.length - 1:
                 position = args[0]
                 if position > self.length:
                     print("index greater than length popping last element")
@@ -76,6 +77,7 @@ class LinkedList:
                             self.length -= 1
                             if position_flag:
                                 self.last = temp_head
+                                print(self.last.__dict__)
                             break
                         temp_head = temp_head.next
     
